@@ -1,10 +1,9 @@
 module WOFF
-  # Used in generation of WOFF files. Currently only modifies licensee
-  # information and writes to a file. In the future it should stream
-  # the output for use in one time use downloads.
+  # Used in generation of WOFF files with modified metadata for licensee and
+  # license id information.
   #
   #   woff = WOFF::Builder.new("/Users/Josh/Desktop/sample.woff")
-  #   woff.font_with_licensee("The Friends")
+  #   woff.font_with_licensee_and_id("The Friends", "L012356093901")
   #
   class Builder
     def initialize(file)
