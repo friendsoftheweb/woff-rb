@@ -1,5 +1,9 @@
 # WOFF
 
+[![Gem Version](https://badge.fury.io/rb/woff.svg)](https://badge.fury.io/rb/woff)
+[![Build Status](https://travis-ci.org/friendsoftheweb/woff-rb.svg?branch=master)](https://travis-ci.org/friendsoftheweb/woff-rb)
+[![Code Climate](https://codeclimate.com/github/friendsoftheweb/woff-rb/badges/gpa.svg)](https://codeclimate.com/github/friendsoftheweb/woff-rb)
+
 This reads binary data from WOFF files in pure Ruby and allows limited
 modification of metadata.
 
