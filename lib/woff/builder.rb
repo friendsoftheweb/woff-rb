@@ -11,7 +11,7 @@ module WOFF
     end
 
     def font_with_licensee_and_id(name, id)
-      metadata_xml = ::Zlib::Inflate.inflate(data.metadata)
+      metadata_xml = data.metadata.length > 0 ? compressor.inflate(data.metadata) : default_metadata
       metadata_doc = REXML::Document.new(metadata_xml)
 
       if metadata_doc.root.elements["licensee"]
@@ -26,7 +26,7 @@ module WOFF
         metadata_doc.root.add_element "license", { "id" => id }
       end
 
-      compressed_metadata = ::Zlib::Deflate.deflate(metadata_doc.to_s)
+      compressed_metadata = compressor.deflate(metadata_doc.to_s)
 
       data.meta_orig_length = metadata_doc.to_s.bytesize
       data.metadata = compressed_metadata
@@ -40,7 +40,20 @@ module WOFF
     attr_reader :location
 
     def data
-      @data ||= WOFF::Data.read(File.open(location))
+      @data ||= WOFF::File.read(::File.open(location))
+    end
+
+    def compressor
+      case data
+      when WOFF::File::V1
+        ::Zlib
+      when WOFF::File::V2
+        ::Brotli
+      end
+    end
+
+    def default_metadata
+      %Q{<?xml version="1.0" encoding="UTF-8"?><metadata version="1.0"></metadata>}
     end
   end
 end
