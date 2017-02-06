@@ -33,7 +33,7 @@ woff = WOFF::Builder.new("/Users/Desktop/sample.woff")
 # metadata's license id to `L012356093901`.
 data = woff.font_with_licensee_and_id("The Friends", "L012356093901")
 
-File.write("/Users/Desktop/sample-with-metadata.woff", data)
+File.binwrite("/Users/Desktop/sample-with-metadata.woff", data)
 ```
 
 ## Contributing
