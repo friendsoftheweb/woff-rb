@@ -22,8 +22,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "bindata", "~> 2.3"
   gem.add_dependency "brotli", "~> 0.1"
 
-  gem.add_development_dependency "rake", "~> 11.2.2"
-  gem.add_development_dependency "rspec", "~> 3.5.0"
-  gem.add_development_dependency "pry"
-  gem.add_development_dependency "pry-byebug"
+  gem.add_development_dependency "rake", "~> 11.2"
+  gem.add_development_dependency "rspec", "~> 3.5"
+  gem.add_development_dependency "pry-byebug", "~> 3.4"
 end
