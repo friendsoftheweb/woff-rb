@@ -11,7 +11,7 @@ modification of metadata.
 
 Add this line to your application's Gemfile:
 
-    gem 'woff', '~> 1.0.0'
+    gem 'woff', '~> 1.1.0'
 
 And then execute:
 
@@ -20,6 +20,11 @@ And then execute:
 Or install it yourself as:
 
     $ gem install woff
+
+## WOFF2 Support
+
+The gem can currently read, but not write to WOFF2 files. Both reading and writing
+WOFF2 files should be considered in development, with API changes likely.
 
 ## Usage
 
