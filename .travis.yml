@@ -3,8 +3,6 @@ python: "3.4"
 before_install:
   - curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
   - sudo python get-pip.py
-  - sudo pip install -U setuptools
-  - sudo pip install -U virtualenvwrapper
   - python -V
   - pip -V
 install:
