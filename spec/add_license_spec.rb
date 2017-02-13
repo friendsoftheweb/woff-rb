@@ -23,7 +23,7 @@ describe "#font_with_licensee_and_id" do
   end
 
   it "is valid according to woffTools" do
-    validate_script = File.expand_path("../../../woffTools/Lib/woffTools/tools/validate.py", __FILE__)
+    validate_script = File.expand_path("../../woffTools/Lib/woffTools/tools/validate.py", __FILE__)
     expect(system("python", validate_script, output_path, "-q")).to be(true)
   end
 
