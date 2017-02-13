@@ -31,6 +31,8 @@ module WOFF
       data.meta_orig_length = metadata_doc.to_s.bytesize
       data.metadata = compressed_metadata
       data.meta_length = compressed_metadata.bytesize
+      data.meta_offset = data.metadata.abs_offset # "Offset to metadata block, from beginning of WOFF file."
+
       data.data_length = data.num_bytes
 
       data.to_binary_s
