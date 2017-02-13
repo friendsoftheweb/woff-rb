@@ -1,4 +1,13 @@
 language: ruby
+python: "3.4"
+before_install:
+  - curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+  - sudo python get-pip.py
+  - python -V
+  - pip -V
+install:
+  - bundle install
+  - sudo pip install -r requirements.txt
 rvm:
-  - 2.1
   - 2.2
+  - 2.3
