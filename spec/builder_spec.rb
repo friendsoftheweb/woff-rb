@@ -37,7 +37,7 @@ describe WOFF::Builder do
     let(:license_text) { "Do the right things" }
     let(:description) { "very nice font" }
 
-    let(:woff) { woff = WOFF::Builder.new(no_metadata_woff_path) }
+    let(:woff) { WOFF::Builder.new(no_metadata_woff_path) }
 
     it "can set just license_text and description" do
       data = woff.font_with_metadata(license_text: license_text, description: description)
